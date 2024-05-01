@@ -2,6 +2,13 @@
 import pandas as pd 
 import streamlit as st
 
-st.title('Analisis de desempeño de los colaboradores') 
+from PIL import Image
 
-st.image() 
+base = pd.read_csv(“employeed.csv”)
+st.title('Analisis de desempeño de los colaboradores') 
+st.header('Dashboard')
+st.text(“Se analizaron los colaboradores de la empresa Clue ”) 
+
+image = Image.open('oso_panda.jpg')
+st.image(image, caption='Logo de empresa')
+
