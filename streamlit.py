@@ -10,7 +10,7 @@ st.header('Dashboard')
 st.text('Se analizaron los colaboradores de la empresa Clue ') 
 
 image = Image.open('sun.webp')
-st.image(image, caption='Logo de empresa',width='400px', use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+st.image(image, caption='Logo de empresa',width='400px')
 
 empleados = pd.read_csv('employeed.csv')
 #buscar los encabezados del csv
