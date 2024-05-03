@@ -20,14 +20,14 @@ Select_gen = st.radio("Seleccionar genero", bdempleados['gender'].unique())
 #st.write("Seleccionar género:", Select_gen) 
 
 #Control para seleccionar un rango del puntuaje
-rango = st.beta_expander("Opción de rango de desempeño del empleado")  
-seleccion_Rango = rango.slider( "Seleccionar el rango",  
-Min_value = float(bdempleados['performance_score'].min()), 
-max_value = float(bdempleados['performance_score'].max()) 
-)  
+#rango = st.beta_expander("Opción de rango de desempeño del empleado")  
+#seleccion_Rango = rango.slider( "Seleccionar el rango",  
+#Min_value = float(bdempleados['performance_score'].min()), 
+#max_value = float(bdempleados['performance_score'].max()) 
+#)  
 
 # plasmar la barras deslizantes 
-st.write(f"Rango de desempeño del empleado { rango}: { seleccion_Rango.shape[0]}") 
+#st.write(f"Rango de desempeño del empleado { rango}: { seleccion_Rango.shape[0]}") 
 
  #Control deslizante para seleccionar el estado civil
 seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  bdempleados['marital_status'].unique()) 
