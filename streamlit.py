@@ -9,7 +9,7 @@ st.title('Analisis de desempeño de los colaboradores')
 st.header('Dashboard')
 st.text('Se analizaron los colaboradores de la empresa Clue ') 
 
-image = Image.open('sun.jpge')
+image = Image.open('sunlogo.jpeg')
 st.image(image, caption='Logo de empresa')
 
 empleados = pd.read_csv('employeed.csv')
