@@ -20,7 +20,7 @@ Select_gen = st.radio("Seleccionar genero", bdempleados['gender'].unique())
 #st.write("Seleccionar género:", Select_gen) 
 
 #Control para seleccionar un rango del puntuaje
-rango = st.expander("Opción de rango de desempeño del empleado")  
+rango = st.beta_expander("Opción de rango de desempeño del empleado")  
 seleccion_Rango = rango.slider( "Seleccionar el rango",  
 Min_value = float(bdempleados['performance_score'].min()), 
 max_value = float(bdempleados['performance_score'].max()) 
