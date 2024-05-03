@@ -1,7 +1,7 @@
 
 import pandas as pd 
 import streamlit as st
-
+import altair as alt 
 from PIL import Image
 
 st.title('Analisis de desempeño de los colaboradores') 
@@ -31,6 +31,9 @@ Select_gen = st.radio("Seleccionar genero", bdempleados['gender'].unique())
 
  #Control deslizante para seleccionar el estado civil
 seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  bdempleados['marital_status'].unique()) 
+
+alt.Chart(bdempleados) 
+
 
 
 
