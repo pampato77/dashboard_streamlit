@@ -17,7 +17,16 @@ bdempleados = empleados[["name_employee","birth_date","age","gender","marital_st
 
 #Control para seleccionar el genero del empleado
 Select_gen = st.radio("Seleccionar genero", bdempleados['gender'].unique()) 
-st.write("Seleccionar género:", Select_gen) 
+#st.write("Seleccionar género:", Select_gen) 
 
 #Control para seleccionar un rango del puntuaje
+rango = st.beta_expander("Opción de rango de desempeño del empleado", True)  
+seleccion_Rango = rango.slider( "Seleccionar el rango",  
+Min_value = float(bdempleados['performance_score'].min()), 
+max_value = float(bdempleados['performance_score'].max()) 
+)  
 
+# plasmar la barras deslizantes 
+St.write(f"Rango de desempeño del empleado { rango}: { seleccion_Rango.shape[0]}") 
+
+ 
