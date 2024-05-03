@@ -17,7 +17,7 @@ bdempleados = empleados[["name_employee","birth_date","age","gender","marital_st
 
 #Control para seleccionar el genero del empleado
 Select_gen = st.radio("Seleccionar genero", bdempleados['gender'].unique()) 
-St.write(f"Selecciona una opción : { Select_gen!r }") 
+St.write("Seleccionar género:", Select_gen") 
 
 #Control para seleccionar un rango del puntuaje
 
