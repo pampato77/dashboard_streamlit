@@ -32,8 +32,13 @@ Select_gen = st.radio("Seleccionar genero", bdempleados['gender'].unique())
  #Control deslizante para seleccionar el estado civil
 seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  bdempleados['marital_status'].unique()) 
 
-alt.Chart(bdempleados) 
 
+c= alt.Chart(bdempleados).mark_point(filled=True).encode(
+    alt.X('performance_score'),
+    alt.Y('position')  
+
+ 
+st.altair_chart(c, use_container_width=True)
 
 
 
