@@ -31,9 +31,9 @@ seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  b
 
 alt.Chart(bdempleados).mark_point(filled=True).encode(
  alt.X('performance_score'),
- alt.Y('position')  
+ alt.Y('gender')  
 )
-st.altair_chart(c, use_container_width=True)
+st.altair_chart()
 
 
 
