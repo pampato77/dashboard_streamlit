@@ -38,12 +38,4 @@ p.xaxis.axis_label = 'performance_score'
 p.yaxis.axis_label = 'position'
 
 st.bokeh_chart(p, use_container_width=True)
-
-
-
-
- 
 st.altair_chart(c, use_container_width=True)
-
-
-
