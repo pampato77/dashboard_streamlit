@@ -2,6 +2,7 @@
 import pandas as pd 
 import streamlit as st
 import altair as alt 
+from bokeh.plotting import figure
 from PIL import Image
 
 st.title('Analisis de desempeño de los colaboradores') 
@@ -26,18 +27,21 @@ Select_performance = st.radio("Seleccionar puntaje de desempeño", bdempleados['
 #Control deslizante para seleccionar el estado civil
 seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  bdempleados['marital_status'].unique()) 
 
-c= alt.Chart(bdempleados).mark_point(filled=True).encode(
-    alt.X('performance_score'),
-    alt.Y('position'),
-    alt.Size('US_Gross'),
-    alt.Color('Major_Genre'),
-    alt.OpacityValue(0.7),
-    tooltip = [alt.Tooltip('Title'),
-               alt.Tooltip('performance_score'),
-               alt.Tooltip('position'),
-               alt.Tooltip('US_Gross')
-              ]
-)
+#Grafica de puntuaje de desempeño
+p=figure()
+p.circle(x='performance_score', y='position',
+         source=df,
+         size=10, color='green')
+
+p.title.text ='Puntuaje de desempeño'
+p.xaxis.axis_label = 'performance_score'
+p.yaxis.axis_label = 'position'
+
+st.bokeh_chart(p, use_container_width=True)
+
+
+
+
  
 st.altair_chart(c, use_container_width=True)
 
