@@ -2,7 +2,7 @@
 import pandas as pd 
 import streamlit as st
 from bokeh.plotting import figure
-from PIL import Image
+
 
 st.title('Analisis de desempeño de los colaboradores') 
 st.header('Dashboard')
