@@ -27,14 +27,14 @@ Select_performance = st.radio("Seleccionar puntaje de desempeño", bdempleados['
 seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  bdempleados['marital_status'].unique()) 
 
 #Grafica de puntuaje de desempeño
-p=figure()
-p.circle(x='performance_score', y='position',
-         source=df,
-         size=10, color='green')
+#p=figure()
+#p.circle(x='performance_score', y='position',
+#        source=df,
+#         size=10, color='green')
 
-p.title.text ='Puntuaje de desempeño'
-p.xaxis.axis_label = 'performance_score'
-p.yaxis.axis_label = 'position'
+#p.title.text ='Puntuaje de desempeño'
+#p.xaxis.axis_label = 'performance_score'
+#p.yaxis.axis_label = 'position'
 
-st.bokeh_chart(p, use_container_width=True)
-st.altair_chart(c, use_container_width=True)
+#st.bokeh_chart(p, use_container_width=True)
+#st.altair_chart(c, use_container_width=True)
