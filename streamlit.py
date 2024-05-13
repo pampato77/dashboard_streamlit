@@ -1,7 +1,6 @@
 
 import pandas as pd 
 import streamlit as st
-import altair as alt 
 from bokeh.plotting import figure
 from PIL import Image
 
