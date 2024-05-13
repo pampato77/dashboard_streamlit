@@ -1,8 +1,6 @@
-
-
 import pandas as pd 
 import streamlit as st
-from bokeh.plotting import figure, output_file, show 
+from bokeh.plotting import figure
 
 st.title('Analisis de desempeño de los colaboradores') 
 st.header('Dashboard')
@@ -27,7 +25,7 @@ Select_performance = st.radio("Seleccionar puntaje de desempeño", bdempleados['
 seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  bdempleados['marital_status'].unique()) 
 
 #Grafica de puntuaje de desempeño
-#p=figure()
+p=figure()
 #p.circle(x='performance_score', y='position',
 #        source=df,
 #         size=10, color='green')
