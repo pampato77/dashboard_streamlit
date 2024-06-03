@@ -1,6 +1,6 @@
 import pandas as pd 
 import streamlit as st
-#from bokeh.plotting import figure
+import plotly.express as pt
 from PIL import Image
 
 st.title('Analisis de desempeño de los colaboradores') 
@@ -37,3 +37,24 @@ seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  b
 
 #st.bokeh_chart(p, use_container_width=True)
 #st.altair_chart(c, use_container_width=True)
+
+c= alt.Chart(puntaje_des).mark_point(filled=True).encode(
+    alt.X('performance_score'),
+    alt.Y('position'),
+    alt.Size('US_Gross'),
+    alt.Color('Major_Genre'),
+    alt.OpacityValue(0.7),
+    tooltip = [alt.Tooltip('Title'),
+               alt.Tooltip('Puntaje de desempeño'),
+               alt.Tooltip('position'),
+               alt.Tooltip('US_Gross')
+              ]
+)
+ 
+st.altair_chart(c, use_container_width=True)
+
+
+
+
+
+
