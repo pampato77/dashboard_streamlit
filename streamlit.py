@@ -30,7 +30,7 @@ marital_status= st.sidebar.multiselect("Seleccionar el Estado Civil",
                                        options=bdem['marital_status'].unique(),
                                        default=bdem['marital_status'].unique())
 
-df_selection=df.query("gender == @gender & performance_score == @performance_score & marital_status == @marital_status")
+df_selection=bdem.query("gender == @gender & performance_score == @performance_score & marital_status == @marital_status")
 #--- GRAFICAS ---#
 
 #Grafica para visualizar la distribución de los puntajes de desempeño 
