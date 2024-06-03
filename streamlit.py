@@ -38,7 +38,7 @@ seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  b
 #st.bokeh_chart(p, use_container_width=True)
 #st.altair_chart(c, use_container_width=True)
 
-c= alt.Chart(puntaje_des).mark_point(filled=True).encode(
+c= alt.Chart(bdempleados).mark_point(filled=True).encode(
     alt.X('performance_score'),
     alt.Y('position'),
     alt.Size('US_Gross'),
