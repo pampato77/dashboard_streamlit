@@ -1,5 +1,5 @@
 import pandas as pd
-import altair as alt
+import ploty.express as px
 import streamlit as st
 from PIL import Image
 
@@ -25,35 +25,11 @@ st.write("Seleccionar puntaje:", Select_performance)
 #Control deslizante para seleccionar el estado civil
 seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  bdempleados['marital_status'].unique()) 
 
-#Grafica de puntuaje de desempeño
-#p=figure()
-#p.circle(x='performance_score', y='position',
-#        source=df,
-#         size=10, color='green')
+#Grafica de la distribución de los puntuaje de desempeño
 
-#p.title.text ='Puntuaje de desempeño'
-#p.xaxis.axis_label = 'performance_score'
-#p.yaxis.axis_label = 'position'
-
-#st.bokeh_chart(p, use_container_width=True)
-#st.altair_chart(c, use_container_width=True)
-
-c= alt.Chart(bdempleados).mark_point(filled=True).encode(
-    alt.X('performance_score'),
-    alt.Y('id_employee'),
-    alt.Size('gender'),
-    alt.Color('position'),
-    alt.OpacityValue(0.7),
-    tooltip = [alt.Tooltip('Title'),
-               alt.Tooltip('Puntaje de desempeño'),
-               alt.Tooltip('position'),
-               alt.Tooltip('US_Gross')
-              ]
-)
- 
-st.altair_chart(c, use_container_width=True)
-
-
+fig = px.scatter(bdempleados, x="performance_score", y="position", color="gender",        
+                 size="marital_status", hover_data=['gender'])
+fig.show()
 
 
 
