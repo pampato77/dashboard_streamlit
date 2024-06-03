@@ -4,8 +4,7 @@ import numpy as np
 import plotly.express as px
 
 #--- IMPORTAR DATOS DE EMPLEADOS ---#
-df=pd.read_csv("employeed.csv")
-bdem = df[["name_employee","birth_date","age","gender","marital_status","hiring_date","position","salary","performance_score","last_performance_date","average_work_hours","satisfaction_level","absences"]]
+bdem=pd.read_csv("employeed.csv")
 
 #--- Configuración de pagina ---#
 st.set_page_config(page_title="Analisis de desempeño de los colaboradores",
