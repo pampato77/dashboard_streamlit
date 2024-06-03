@@ -1,12 +1,13 @@
 import pandas as pd 
 import streamlit as st
+from PIL import Image
 #from bokeh.plotting import figure
 
 st.title('Analisis de desempeño de los colaboradores') 
 st.header('Dashboard')
 st.text('Se analizaron los colaboradores de la empresa Clue ') 
 
-st.image = Image.open('sunlogo.jpeg')
+image = Image.open('sunlogo.jpeg')
 st.image(image, caption='SoftSun')
 
 #empleados = pd.read_csv('employeed.csv')
