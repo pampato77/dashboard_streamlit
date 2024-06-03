@@ -1,13 +1,14 @@
-import pandas as pd
 import streamlit as st
-from PIL import Image
+import pandas as pd
+import numpy as np
+import plotly.express as px
 
 st.title('Analisis de desempeño de los colaboradores') 
 st.header('Dashboard')
 st.text('Se analizaron los colaboradores de la empresa Clue ') 
 
-image = Image.open('sunlogo.jpeg')
-st.image(image, caption='SoftSun')
+st.sidebar.image("sunlogo.jpeg")
+st.sidebar.markdown("##")
 
 empleados = pd.read_csv('employeed.csv')
 #buscar los encabezados del csv
@@ -23,15 +24,27 @@ st.write("Seleccionar puntaje:", Select_performance)
 
 #Control deslizante para seleccionar el estado civil
 seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  bdempleados['marital_status'].unique()) 
-import plotly.express as px
 
 #Grafica de la distribución de los puntuaje de desempeño
+df_selection=bdempleados.query("gender == @gender & performance_score == @performance_score & marital_status == @marital_status")
 
-fig = px.scatter(bdempleados, x="performance_score", y="position")
-fig.show()
-st.plotly_chart(fig,use_contanier_width= True)
+#Grafica para visualizar las horas
+avg_hours_gender=(
+    df_selection.groupby(by=['gender']).sum()
+[['average_work_hours']].sort_values(by="average_work_hours"))
 
+fig_hours_gender=px.bar(avg_hours_gender,
+                        x=avg_hours_gender.index,
+                        y="average_work_hours", 
+                        orientation="v",
+                        title="Average Worked Hours by Gender",
+                        labels=dict(average_work_hours="Total Worked Hours", gender="Gender"),
+                        color_discrete_sequence=["#7ECBB4"],
+                        template="plotly_white")
 
+fig_hours_gender.update_layout(plot_bgcolor="rgba(0,0,0,0)")
+
+st.plotly_chart(fig_hours_gender)
 
 
 
