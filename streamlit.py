@@ -1,7 +1,5 @@
 import pandas as pd
-
 import streamlit as st
-import ploty.express as px
 from PIL import Image
 
 st.title('Analisis de desempeño de los colaboradores') 
@@ -28,9 +26,9 @@ seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  b
 
 #Grafica de la distribución de los puntuaje de desempeño
 
-fig = px.scatter(bdempleados, x="performance_score", y="position", color="gender",        
-                 size="marital_status", hover_data=['gender'])
+fig = px.scatter(bdempleados, x="performance_score", y="position")
 fig.show()
+
 
 
 
