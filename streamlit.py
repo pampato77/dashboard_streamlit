@@ -23,11 +23,13 @@ st.write("Seleccionar puntaje:", Select_performance)
 
 #Control deslizante para seleccionar el estado civil
 seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  bdempleados['marital_status'].unique()) 
+import plotly.express as px
 
 #Grafica de la distribución de los puntuaje de desempeño
 
-fig = scatter(bdempleados, x="performance_score", y="position")
+fig = px.scatter(bdempleados, x="performance_score", y="position")
 fig.show()
+st.plotly_chart(fig,use_contanier_width= True)
 
 
 
