@@ -40,9 +40,9 @@ seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  b
 
 c= alt.Chart(bdempleados).mark_point(filled=True).encode(
     alt.X('performance_score'),
-    alt.Y('position'),
-    alt.Size('US_Gross'),
-    alt.Color('Major_Genre'),
+    alt.Y('id_employee'),
+    alt.Size('gender'),
+    alt.Color('position'),
     alt.OpacityValue(0.7),
     tooltip = [alt.Tooltip('Title'),
                alt.Tooltip('Puntaje de desempeño'),
