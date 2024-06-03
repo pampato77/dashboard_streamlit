@@ -19,11 +19,11 @@ Select_gen = st.radio("Seleccionar genero", bdempleados['gender'].unique())
 st.write("Seleccionar género:", Select_gen) 
 
 #Control para seleccionar un rango del puntuaje
-#Select_performance = st.radio("Seleccionar puntaje de desempeño", bdempleados['performance_score'].unique()) 
-#st.write("Seleccionar puntaje:", Select_performance)
+Select_performance = st.radio("Seleccionar puntaje de desempeño", bdempleados['performance_score'].unique()) 
+st.write("Seleccionar puntaje:", Select_performance)
 
 #Control deslizante para seleccionar el estado civil
-#seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  bdempleados['marital_status'].unique()) 
+seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  bdempleados['marital_status'].unique()) 
 
 #Grafica de puntuaje de desempeño
 #p=figure()
