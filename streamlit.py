@@ -1,6 +1,7 @@
 import pandas as pd
-import ploty.express as px
+
 import streamlit as st
+import ploty.express as px
 from PIL import Image
 
 st.title('Analisis de desempeño de los colaboradores') 
