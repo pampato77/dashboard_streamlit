@@ -1,6 +1,5 @@
 import pandas as pd 
 import streamlit as st
-import plotly.express as pt
 from PIL import Image
 
 st.title('Analisis de desempeño de los colaboradores') 
