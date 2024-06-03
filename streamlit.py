@@ -26,7 +26,7 @@ seleccion_edoCivil = st.selectbox("Selección del estado civil del empleado",  b
 
 #Grafica de la distribución de los puntuaje de desempeño
 
-fig = px.scatter(bdempleados, x="performance_score", y="position")
+fig = scatter(bdempleados, x="performance_score", y="position")
 fig.show()
 
 
